@@ -5,7 +5,7 @@ title: Online Installation from Helm (Recommended)
 
 The recommended way to deploy HAMi is via Helm.
 
-## Add HAMi repo
+## Add HAMi Repo
 
 You can add HAMi chart repository using the following command:
 
@@ -14,9 +14,9 @@ helm repo add hami-charts https://project-hami.github.io/HAMi/
 helm repo update
 ```
 
-## Get your Kubernetes version
+## Check Your Kubernetes Version
 
-A Kubernetes version is required for proper installation. You can retrieve your Kubernetes server version with:
+A Kubernetes version is required for a successful installation. You can retrieve your Kubernetes server version with:
 
 ```bash
 kubectl version
@@ -24,7 +24,7 @@ kubectl version
 
 ## Installation
 
-Ensure the `scheduler.kubeScheduler.image.tag` matches your Kubernetes server version. For instance, if your cluster server is v1.29.0, use the following command to deploy:
+Ensure the `scheduler.kubeScheduler.image.tag` matches your Kubernetes server version. For instance, if your cluster server is running Kubernetes v1.29.0, use the following command to deploy:
 
 ```bash
 helm install hami hami-charts/hami --set scheduler.kubeScheduler.image.tag=v1.29.0 -n kube-system
@@ -32,7 +32,7 @@ helm install hami hami-charts/hami --set scheduler.kubeScheduler.image.tag=v1.29
 
 Customize your installation by editing the [configurations](../userguide/configure.md).
 
-## Verify your installation
+## Verify Your Installation
 
 You can verify your installation using the following command:
 
@@ -40,4 +40,4 @@ You can verify your installation using the following command:
 kubectl get pods -n kube-system
 ```
 
-If both hami-device-plugin and hami-scheduler pods are in the Running state, your installation is successful.
+If both the hami-device-plugin and hami-scheduler pods are `Running` and `Ready`, your installation is successful.
