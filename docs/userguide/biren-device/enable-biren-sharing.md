@@ -143,7 +143,7 @@ spec:
             path: /usr/local/birensupa/driver/biren-smi/lib
 ```
 
-### Run Biren jobs
+### Run Biren Jobs
 
 ```yaml
 kind: Pod

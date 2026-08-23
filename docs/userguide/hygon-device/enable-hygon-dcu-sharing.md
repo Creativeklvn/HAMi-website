@@ -19,11 +19,11 @@ title: Enable Hygon DCU sharing
 - dtk driver >= 24.04
 - hy-smi v1.6.0
 
-## Enabling DCU-sharing Support
+## Enabling DCU-Sharing Support
 
 - Deploy the [dcu-vgpu-device-plugin](https://github.com/Project-HAMi/dcu-vgpu-device-plugin)
 
-## Running DCU jobs
+## Running DCU Jobs
 
 Hygon DCUs can now be requested by a container using the `hygon.com/dcunum`, `hygon.com/dcumem` and `hygon.com/dcucores` resource type:
 
@@ -47,7 +47,7 @@ spec:
           hygon.com/dcucores: 60 # each dcu use 60% of total compute cores
 ```
 
-## Enable vDCU inside container
+## Enable vDCU Inside Container
 
 You need to enable vDCU inside the container to use it.
 

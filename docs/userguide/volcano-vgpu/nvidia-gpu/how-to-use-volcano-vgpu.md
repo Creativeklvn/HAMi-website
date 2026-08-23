@@ -15,7 +15,7 @@ Volcano vGPU is only available in Volcano > v1.9.
 
 ## Quick Start
 
-### Configure scheduler
+### Configure Scheduler
 
 Update the scheduler configuration:
 
@@ -56,7 +56,7 @@ Once you have enabled this option on _all_ the GPU nodes you wish to use, you ca
 kubectl create -f https://raw.githubusercontent.com/Project-HAMi/volcano-vgpu-device-plugin/main/volcano-vgpu-device-plugin.yml
 ```
 
-### Verify environment is ready
+### Verify Environment Is Ready
 
 Check the node status, it is ok if `volcano.sh/vgpu-number` is included in the allocatable resources.
 

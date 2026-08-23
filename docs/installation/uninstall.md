@@ -37,7 +37,7 @@ Uninstalling HAMi does not automatically stop or kill running GPU tasks. Contain
 
 If you want to perform a complete cleanup and remove all HAMi-related resources, follow these steps:
 
-#### 1. Stop or reschedule running tasks
+#### 1. Stop or Reschedule Running Tasks
 
 Before uninstalling, consider gracefully stopping your GPU workloads:
 
@@ -47,7 +47,7 @@ kubectl delete pods -l gpu-workload=true --all-namespaces --grace-period=30
 
 Or reschedule them to nodes without GPU requirements.
 
-#### 2. Verify no HAMi pods are running
+#### 2. Verify No HAMi Pods Are Running
 
 After uninstallation, verify that HAMi components are removed:
 
@@ -57,13 +57,13 @@ kubectl get pods -n kube-system | grep -i hami
 
 Should return no results.
 
-#### 3. Clean up HAMi ConfigMaps (if custom configuration was used)
+#### 3. Clean Up HAMi ConfigMaps (If Custom Configuration Was Used)
 
 ```bash
 kubectl delete configmap hami-scheduler-device -n kube-system --ignore-not-found
 ```
 
-#### 4. Remove any PersistentVolumes created by HAMi (if applicable)
+#### 4. Remove Any PersistentVolumes Created by HAMi (If Applicable)
 
 ```bash
 kubectl get pv | grep hami
@@ -93,7 +93,7 @@ To reinstall HAMi, follow the [installation guide](./online-installation.md).
 
 ## Troubleshooting
 
-### HAMi pods stuck in terminating state
+### HAMi Pods Stuck in Terminating State
 
 If HAMi pods are stuck in the "Terminating" state, you can force delete them:
 
@@ -103,7 +103,7 @@ kubectl delete pods -n kube-system -l app.kubernetes.io/instance=hami --grace-pe
 
 Then try the uninstall command again.
 
-### Helm release not found error
+### Helm Release Not Found Error
 
 If you get an error that the helm release is not found, HAMi is already uninstalled:
 
@@ -113,7 +113,7 @@ Error: release named "hami" not found
 
 You can verify this by checking the pods as shown in the verification section above.
 
-### GPU resources still in use after uninstallation
+### GPU Resources Still in Use After Uninstallation
 
 If GPU resources are still allocated to pods after uninstalling HAMi, it means those pods are still running. You'll need to:
 

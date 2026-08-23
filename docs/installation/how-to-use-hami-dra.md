@@ -35,7 +35,7 @@ helm install cert-manager jetstack/cert-manager \
   --set crds.enabled=true
 ```
 
-### 2. Add the HAMi-DRA Helm repository
+### 2. Add the HAMi-DRA Helm Repository
 
 ```bash
 helm repo add hami-dra https://project-hami.github.io/HAMi-DRA
@@ -64,7 +64,7 @@ helm repo update
 helm upgrade hami-dra hami-dra/hami-dra
 ```
 
-### Verify installation
+### Verify Installation
 
 Check that all pods are running:
 
@@ -131,7 +131,7 @@ Please refer to the corresponding page to install the device driver.
 
 HAMi DRA supports two usage modes: **DRA native mode** and **DevicePlugin-compatible mode**.
 
-### DRA native mode
+### DRA Native Mode
 
 Create a ResourceClaim to request a GPU with specific cores and memory:
 
@@ -175,7 +175,7 @@ spec:
   restartPolicy: Never
 ```
 
-### DevicePlugin-compatible mode
+### DevicePlugin-Compatible Mode
 
 The HAMi DRA webhook automatically converts DevicePlugin-style resource requests into DRA ResourceClaims. Use the same resource syntax as the traditional mode:
 

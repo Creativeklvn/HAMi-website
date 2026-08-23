@@ -50,7 +50,7 @@ HAMi supports two request styles:
 1. Direct DRS slice request (`enflame.com/drs-gcu`)
 2. Unified memory/core request (`enflame.com/gcu-memory` + `enflame.com/gcu-core`); HAMi converts it to a DRS profile internally.
 
-### Direct DRS slice request
+### Direct DRS Slice Request
 
 ```yaml
 apiVersion: v1
@@ -73,7 +73,7 @@ spec:
           enflame.com/drs-gcu: 3
 ```
 
-### Request by memory/core (recommended unified API)
+### Request by Memory/Core (Recommended Unified API)
 
 ```yaml
 apiVersion: v1

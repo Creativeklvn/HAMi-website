@@ -32,6 +32,6 @@ Maintainers also hold closed meetings to discuss security reports or Code of Con
 
 [Code of Conduct](https://github.com/cncf/foundation/blob/main/code-of-conduct.md) violations by community members are referred to the CNCF Code of Conduct Committee. If the CNCF CoC Committee needs to work with the project on resolution, the Maintainers will appoint a non-involved contributor to assist.
 
-## Modifying this charter
+## Modifying This Charter
 
 Changes to this governance document and its supporting documents require a 2/3 vote of the Maintainers.

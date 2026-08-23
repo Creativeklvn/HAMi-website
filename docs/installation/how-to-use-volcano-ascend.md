@@ -36,7 +36,7 @@ Additional installation methods can be found in [the Volcano Quick Start Guide](
 kubectl label node <ascend-node> ascend=on
 ```
 
-### Deploy `hami-scheduler-device` config map
+### Deploy `hami-scheduler-device` ConfigMap
 
 ```shell
 kubectl apply -f https://raw.githubusercontent.com/Project-HAMi/ascend-device-plugin/refs/heads/main/ascend-device-configmap.yaml

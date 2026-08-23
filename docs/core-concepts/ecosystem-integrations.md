@@ -41,7 +41,7 @@ flowchart TB
     CORE --> HW
 ```
 
-## How HAMi integrates
+## How HAMi Integrates
 
 HAMi exposes three roles that partners can mix and match:
 
@@ -51,33 +51,33 @@ HAMi exposes three roles that partners can mix and match:
 
 Which path a partner takes depends on the layer it owns. Some call into the scheduler extender, others reuse HAMi-core directly for node-side isolation.
 
-## Integration partners
+## Integration Partners
 
-### Native (default)
+### Native (Default)
 
 Out of the box, `kube-scheduler` delegates GPU filtering and scoring to `hami-scheduler`, while `hami-device-plugin` and HAMi-core handle sharing and isolation. That covers single-task, independent scheduling, which is just right for **online inference**. No extra scheduler is needed.
 
-### Volcano for gang and batch scheduling
+### Volcano for Gang and Batch Scheduling
 
 [Volcano](https://github.com/volcano-sh/volcano) adds gang scheduling, where every Pod in a job starts together or none of them do, plus multi-level queue priorities and fair-share. Those are the batch capabilities **AI training** needs. HAMi connects through the [`volcano-vgpu-device-plugin`](https://github.com/Project-HAMi/volcano-vgpu-device-plugin), so Volcano schedules HAMi-managed vGPUs while HAMi-core keeps doing the GPU isolation.
 
 - Install: [Use Volcano vGPU](../installation/how-to-use-volcano-vgpu.md)
 - Guide and examples: [Volcano vGPU (NVIDIA GPU)](../userguide/volcano-vgpu/nvidia-gpu/how-to-use-volcano-vgpu.md)
 
-### Kueue for job queuing and fairness
+### Kueue for Job Queuing and Fairness
 
 [Kueue](https://kueue.sigs.k8s.io/) sits above the default scheduler and manages job admission, fairness, and quotas through `ResourceFlavor` and `ClusterQueue`. HAMi's vGPU resources show up as schedulable flavors that Kueue can queue and admit. That gives you **cohort fairness and quota enforcement** on top of GPU sharing, all without replacing `kube-scheduler`.
 
 - Guide: [Using HAMi with Kueue](../userguide/kueue/how-to-use-kueue.md)
 - Upstream integration doc: [Running HAMi workloads in Kueue](https://kueue.sigs.k8s.io/docs/tasks/run/using_hami/)
 
-### Koordinator for device scheduling and colocation
+### Koordinator for Device Scheduling and Colocation
 
 [Koordinator](https://koordinator.sh/) does fine-grained device scheduling and CPU/GPU colocation. Deploy HAMi-core on the nodes, set the right labels and resource requests, and Koordinator will use HAMi's GPU isolation so **multiple Pods can share one GPU**. The broader scheduling and colocation decisions stay with Koordinator.
 
 - Upstream integration doc: [Sharing a GPU with HAMi in Koordinator](https://koordinator.sh/docs/user-manuals/device-scheduling-gpu-share-with-hami/)
 
-### KAI Scheduler, NVIDIA's AI batch scheduler
+### KAI Scheduler, NVIDIA's AI Batch Scheduler
 
 [KAI Scheduler](https://github.com/kai-scheduler/KAI-Scheduler) is NVIDIA's open-source, Kubernetes-native scheduler for AI workloads. It grew out of Run:ai, ships under Apache 2.0, and is a CNCF Sandbox project. It brings **PodGroup gang scheduling**, **hierarchical fair queues**, **fractional GPU sharing**, **topology-aware placement**, and **elastic workloads**. These are the things AI training needs that the default scheduler doesn't offer.
 
@@ -89,7 +89,7 @@ HAMi-core fills it. **KAI Scheduler does the scheduling, HAMi-core does the isol
 - Isolator component: [kai-resource-isolator](https://github.com/Project-HAMi/KAI-resource-isolator)
 - Step-by-step setup: [How to use KAI Scheduler with HAMi](../userguide/kai-scheduler/how-to-use-kai-scheduler.md)
 
-## Choosing an integration
+## Choosing an Integration
 
 | Workload pattern | Recommended partner | What it adds on top of HAMi |
 | --- | --- | --- |

@@ -214,7 +214,7 @@ spec:
             path: /usr/lib64/libvaml.so
 ```
 
-### Run Vastai jobs
+### Run Vastai Jobs
 
 ```yaml
 apiVersion: v1

@@ -4,7 +4,7 @@ title: HAMi Adopters
 
 Using HAMi in your organization? Reach out and let the community know.
 
-## Adding yourself
+## Adding Yourself
 
 [See the list of HAMi adopters](https://github.com/Project-HAMi/website/blob/master/src/data/adopters.json) for organizations who have adopted the HAMi project in production.
 

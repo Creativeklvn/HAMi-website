@@ -25,6 +25,6 @@ The HAMi scheduler is responsible for assigning tasks to the appropriate nodes a
 
 The device-plugin layer obtains the scheduling result from the annotations field of the task and maps the corresponding device to the container.
 
-## HAMi-Core {#hami-core}
+## HAMi-core {#hami-core}
 
 The in-container resource control is responsible for monitoring the resource usage within the container and providing hard isolation capabilities.

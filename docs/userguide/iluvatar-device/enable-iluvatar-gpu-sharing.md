@@ -21,7 +21,7 @@ title: Enable Iluvatar GPU Sharing
 - Iluvatar gpu-manager (please consult your device provider)
 - driver version > 3.1.0
 
-## Enabling GPU-sharing Support
+## Enabling GPU-Sharing Support
 
 - Deploy gpu-manager on iluvatar nodes (please consult your device provider to acquire its package and document)
 
@@ -79,7 +79,7 @@ HAMi divides each Iluvatar GPU into 100 units for resource allocation. Requestin
 - Core allocation is enforced with hard limits to ensure tasks do not exceed their allocated cores
 - When requesting multiple GPUs, the system will automatically set the core resources based on the number of GPUs requested
 
-## Running Iluvatar jobs
+## Running Iluvatar Jobs
 
 Iluvatar GPUs can now be requested by a container using the `iluvatar.ai/BI-V150-vgpu`, `iluvatar.ai/BI-V150.vMem` and `iluvatar.ai/BI-V150.vCore` resource type:
 

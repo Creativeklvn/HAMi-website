@@ -34,13 +34,13 @@ If a container exceeds its `nvidia.com/gpumem` limit, check the following causes
 
     This will apply the fix automatically.
 
-## NVIDIA containers fail with GPU Operator 25.10+ {#nvidia-toolkit-gpu-operator-25-10}
+## NVIDIA Containers Fail with GPU Operator 25.10+ {#nvidia-toolkit-gpu-operator-25-10}
 
 Use this section when the HAMi Device Plugin or a HAMi-scheduled NVIDIA workload stops starting after GPU Operator is installed or upgraded.
 
-### Problem 1: The HAMi Device Plugin fails to start
+### Problem 1: The HAMi Device Plugin Fails to Start
 
-#### Identify the cause
+#### Identify the Cause
 
 Check the Device Plugin logs:
 
@@ -97,9 +97,9 @@ devicePlugin:
 
 Wait until the NVIDIA driver and Toolkit DaemonSets are ready, then restart the HAMi Device Plugin. For host-installed drivers, set `devicePlugin.nvidiaDriverRoot` to `/` instead.
 
-### Problem 2: A HAMi-scheduled Pod fails to start
+### Problem 2: A HAMi-Scheduled Pod Fails to Start
 
-#### Identify the cause
+#### Identify the Cause
 
 Inspect the Pod events and its assigned RuntimeClass:
 
@@ -131,7 +131,7 @@ helm get values hami -n kube-system | grep -A 5 'devicePlugin:'
 
 Do not mix HAMi CDI annotations with a missing or stale HAMi CDI specification. See [NVIDIA CDI support](../installation/configure-cdi.md) for the complete setup and verification procedure.
 
-### Why this happens
+### Why This Happens
 
 Starting with [GPU Operator 25.10.0](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/25.10/cdi.html), CDI is enabled by default and the Operator no longer makes the `nvidia` runtime the default runtime.
 

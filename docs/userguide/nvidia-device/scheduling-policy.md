@@ -28,7 +28,7 @@ helm install hami hami-charts/hami \
 
 Individual pods can override the default by specifying a scheduling policy in `.metadata.annotations`.
 
-### Example: binpack policy
+### Example: Binpack Policy
 
 ```yaml
 apiVersion: v1
@@ -48,7 +48,7 @@ spec:
           nvidia.com/gpumem: 4000
 ```
 
-### Example: spread policy
+### Example: Spread Policy
 
 ```yaml
 apiVersion: v1

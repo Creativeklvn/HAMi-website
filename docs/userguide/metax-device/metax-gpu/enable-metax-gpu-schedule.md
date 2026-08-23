@@ -34,13 +34,13 @@ When a user job requests a specific number of `metax-tech.com/gpu` resources, Ku
 - MetaX GPU extensions >= 0.8.0
 - Kubernetes >= 1.23
 
-## Enabling topo-awareness scheduling
+## Enabling Topo-Awareness Scheduling
 
 - Deploy MetaX GPU Extensions on metax nodes (Please consult your device provider to acquire its package and document)
 
 - Deploy HAMi using the [online installation guide](../../../installation/online-installation.md)
 
-## Running MetaX jobs
+## Running MetaX Jobs
 
 MetaX GPUs can now be requested by a container using the `metax-tech.com/gpu` resource type:
 

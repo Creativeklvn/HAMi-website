@@ -50,7 +50,7 @@ I0422 13:42:30.272827       1 scheduler.go:499] All node scores do not meet for 
 I0422 13:42:30.273047       1 event.go:307] "Event occurred" object="default/gpu-pod" type="Warning" reason="FilteringFailed" message="no available node, all node scores do not meet"
 ```
 
-### Interleaved Logs from Multiple Tasks Make Node Scoring Analysis Impossible
+### Interleaved Logs From Multiple Tasks Make Node Scoring Analysis Impossible
 
 Concurrent node scoring creates interleaved logs across multiple Pods/nodes. For example:
 

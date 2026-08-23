@@ -13,11 +13,11 @@ The goal of this document is not to repeat installation steps, but to validate t
 
 If HAMi is not yet installed, please follow the deployment guide first.
 
-## Step 0: Configure Node Container Runtime (If not already done)
+## Step 0: Configure Node Container Runtime (If Not Already Done)
 
 HAMi requires the `nvidia-container-toolkit` to be installed and set as the default low-level runtime on all your GPU nodes.
 
-### 1. Install nvidia-container-toolkit (Debian/Ubuntu example)
+### 1. Install nvidia-container-toolkit (Debian/Ubuntu Example)
 
 ```bash
 curl -fsSL https://nvidia.github.io/libnvidia-container/gpgkey | sudo gpg --dearmor -o /usr/share/keyrings/nvidia-container-toolkit-keyring.gpg \
@@ -28,7 +28,7 @@ curl -fsSL https://nvidia.github.io/libnvidia-container/gpgkey | sudo gpg --dear
 sudo apt-get update && sudo apt-get install -y nvidia-container-toolkit
 ```
 
-### 2. Configure your runtime
+### 2. Configure Your Runtime
 
 - For containerd: Edit `/etc/containerd/config.toml` to set the default runtime name to `"nvidia"` and the binary name to `"/usr/bin/nvidia-container-runtime"`.
 
@@ -46,13 +46,13 @@ sudo apt-get update && sudo apt-get install -y nvidia-container-toolkit
     sudo systemctl daemon-reload && sudo systemctl restart docker
     ```
 
-## Step 1: Validate the Native GPU Stack (Crucial Pre-flight Check)
+## Step 1: Validate the Native GPU Stack (Crucial Pre-Flight Check)
 
 Before installing HAMi, you must prove that Kubernetes can natively access the GPU.
 
 This step validates your GPU stack independently of HAMi.
 
-### 1. Deploy a native test pod
+### 1. Deploy a Native Test Pod
 
 ```bash
 cat <<EOF | kubectl apply -f -
@@ -74,7 +74,7 @@ EOF
 
 Expected: You see valid `nvidia-smi` output. If this fails, do NOT continue. Fix your GPU setup first.
 
-### 2. Verify execution
+### 2. Verify Execution
 
 ```bash
 kubectl wait --for=condition=Succeeded pod/cuda-test --timeout=60s
@@ -93,20 +93,20 @@ Once the baseline is verified, ensure that HAMi is installed and its components 
 
 If you have already deployed HAMi, you can skip the installation command and only verify that the components are running.
 
-### 1. Label the node
+### 1. Label the Node
 
 ```bash
 kubectl label nodes $(hostname) gpu=on --overwrite
 ```
 
-### 2. Deploy using Helm
+### 2. Deploy Using Helm
 
 ```bash
 helm repo add hami-charts https://project-hami.github.io/HAMi/
 helm install hami hami-charts/hami -n kube-system
 ```
 
-### 3. Verify components
+### 3. Verify Components
 
 ```bash
 kubectl get pods -n kube-system | grep hami
@@ -118,7 +118,7 @@ Expected: Both `hami-scheduler` and `hami-device-plugin` pods should be in the `
 
 This step verifies HAMi is enforcing fractional resource limits (vGPU).
 
-### 1. Submit a vGPU demo task
+### 1. Submit a vGPU Demo Task
 
 ```bash
 cat <<EOF | kubectl apply -f -
@@ -138,7 +138,7 @@ spec:
 EOF
 ```
 
-### 2. Verify resource control inside the container
+### 2. Verify Resource Control Inside the Container
 
 ```bash
 kubectl wait --for=condition=Ready pod/gpu-pod --timeout=60s

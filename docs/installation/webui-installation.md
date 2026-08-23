@@ -23,9 +23,9 @@ Before you install HAMi WebUI with Helm, ensure the following:
 
 4. Helm > 3.0
 
-## Install HAMi WebUI using Helm
+## Install HAMi WebUI Using Helm
 
-### Deploy the HAMi WebUI Helm chart
+### Deploy the HAMi WebUI Helm Chart
 
 To add the HAMi WebUI Helm repository and install the chart on your machine, follow these steps:
 
@@ -77,7 +77,7 @@ To add the HAMi WebUI Helm repository and install the chart on your machine, fol
 
 This section lists tips that may help when you deploy HAMi WebUI on Kubernetes with Helm.
 
-### Collect logs
+### Collect Logs
 
 When troubleshooting, check the HAMi WebUI component logs.
 
@@ -90,7 +90,7 @@ kubectl logs --namespace=kube-system deploy/my-hami-webui -c hami-webui-be-oss
 
 For more information, see [Pods](https://kubernetes.io/docs/reference/kubectl/cheatsheet/#interacting-with-running-pods) and [Deployments](https://kubernetes.io/docs/reference/kubectl/cheatsheet/#interacting-with-deployments-and-services).
 
-## Uninstall the HAMi WebUI deployment
+## Uninstall the HAMi WebUI Deployment
 
 To remove the Helm release, use:
 
@@ -98,7 +98,7 @@ To remove the Helm release, use:
 helm uninstall my-hami-webui -n kube-system
 ```
 
-## Related documentation
+## Related Documentation
 
 After you can reach the WebUI, use these docs to learn the UI or contribute to development:
 

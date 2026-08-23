@@ -28,7 +28,7 @@ helm install --generate-name --namespace <ENTER_NAMESPACE_HERE> ./*
 
 You can customize the installation by adjusting the [configuration](../userguide/configure.md).
 
-## Install with AWS Add-on
+## Install with AWS Add-On
 
 Before installing HAMi using the AWS add-on, you need to install **cert-manager**. You can find it in the AWS Marketplace add-ons section and install it through the AWS Console. You may also refer to the [AWS User Guide](https://docs.aws.amazon.com/eks/latest/userguide/lbc-manifest.html#lbc-cert) for installation instructions.
 

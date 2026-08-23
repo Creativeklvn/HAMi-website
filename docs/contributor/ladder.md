@@ -140,7 +140,7 @@ Active participation is important for project health. Inactivity is measured by:
 
 Consequences may include involuntary removal, demotion, or a move to Emeritus status.
 
-## Involuntary removal or demotion
+## Involuntary Removal or Demotion
 
 Involuntary removal or demotion happens when a contributor's responsibilities and requirements are no longer being met. This may result from repeated or extended inactivity, failure to meet role requirements, or a Code of Conduct violation.
 

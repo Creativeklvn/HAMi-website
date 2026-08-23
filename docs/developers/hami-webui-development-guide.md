@@ -3,7 +3,7 @@ title: HAMi WebUI Developer Guide
 sidebar_label: HAMi WebUI
 ---
 
-## Project positioning
+## Project Positioning
 
 [HAMi WebUI](https://github.com/Project-HAMi/HAMi-WebUI) is the web visualization and O&M interface of HAMi. It is mainly used to monitor, inspect, and manage nodes, GPU resources, and workloads.
 
@@ -12,9 +12,9 @@ The project adopts a frontend-backend separation architecture:
 - Frontend (browser) is responsible for pages and interactions.
 - Backend BFF is responsible for static asset hosting and API proxying.
 
-## Architecture and runtime flow
+## Architecture and Runtime Flow
 
-### System architecture
+### System Architecture
 
 The architecture includes frontend UI, backend services, and underlying cluster resources. Through GPU usage data collection and processing, the system provides unified visualization and analysis of resource status.
 
@@ -24,7 +24,7 @@ The architecture includes frontend UI, backend services, and underlying cluster 
 
 </div>
 
-### Repository structure
+### Repository Structure
 
 - **Root (Node/NestJS, BFF)**
   - Hosts static assets from `public/`
@@ -36,13 +36,13 @@ The architecture includes frontend UI, backend services, and underlying cluster 
 - **`server`**
   - Go backend service
 
-### Runtime ports
+### Runtime Ports
 
 - BFF: `http://localhost:3000/`
 - Vite dev server: `http://localhost:8080/`
 - Backend service (proxied by BFF): `http://127.0.0.1:8000`
 
-### Requests and static assets
+### Requests and Static Assets
 
 - Frontend build output goes to root `public/` (`outDir: '../../public'`, assets in `public/static`)
 - BFF static hosting: `src/main.ts` with `app.useStaticAssets(join(__dirname, '..', 'public'))`
@@ -50,9 +50,9 @@ The architecture includes frontend UI, backend services, and underlying cluster 
   - Frontend uses `/api/vgpu/...`
   - BFF `ApiProxyMiddleware` proxies to `http://127.0.0.1:8000` (with `^/api/vgpu -> ''` rewrite)
 
-## Frontend stack and module organization
+## Frontend Stack and Module Organization
 
-### Tech stack
+### Tech Stack
 
 - Vue 3 (Composition API + script setup)
 - Vue Router (`packages/web/src/router/index.js`, module routes in `packages/web/projects/vgpu/router.js`)
@@ -63,7 +63,7 @@ The architecture includes frontend UI, backend services, and underlying cluster 
   - TDesign (`packages/web/src/plugins/tdesign.js`, preferred)
   - Element Plus (`packages/web/src/plugins/element.js`)
 
-### Directory conventions
+### Directory Conventions
 
 1. **Common foundation layer** (`packages/web/src/`)
    - `layout/`: global layout (Sidebar / TopBar / AppMain)
@@ -78,7 +78,7 @@ The architecture includes frontend UI, backend services, and underlying cluster 
    - `hooks/`: business hooks
    - `components/`: business components (charts and dashboards)
 
-### Routing and menu conventions
+### Routing and Menu Conventions
 
 1. Route entry (`packages/web/src/router/index.js`)
    - Mount `vgpuRoutes` in `constantRoutes` with `Layout` as top-level layout
@@ -93,9 +93,9 @@ The architecture includes frontend UI, backend services, and underlying cluster 
    - Add `meta.title` in routes
    - Add matching i18n keys in both `packages/web/src/locales/en.js` and `packages/web/src/locales/zh.js`
 
-## Local development and build
+## Local Development and Build
 
-### One-command startup
+### One-Command Startup
 
 Run from repository root:
 
@@ -108,9 +108,9 @@ This starts:
 - BFF (NestJS, port 3000)
 - Vite dev server (port 8080)
 
-## Coding conventions
+## Coding Conventions
 
-### Code style (Prettier / ESLint)
+### Code Style (Prettier / ESLint)
 
 Based on repository configuration:
 
@@ -120,7 +120,7 @@ Based on repository configuration:
   - `semi: 'never'`
   - `quotes: ['single', ...]`
 
-### Vue writing conventions
+### Vue Writing Conventions
 
 1. Prefer `script setup`
 2. Do not hardcode Chinese/English strings in templates; use i18n keys
@@ -128,7 +128,7 @@ Based on repository configuration:
    - JS/TS: `const { t } = useI18n(); t('xxx.yyy')`
 3. Styles usually use `scoped` + `lang="scss"`; use `:deep(...)` when needed
 
-### API wrapper conventions
+### API Wrapper Conventions
 
 Under `packages/web/projects/vgpu/api/`:
 
@@ -139,14 +139,14 @@ Under `packages/web/projects/vgpu/api/`:
   - `request({ url, method, data/params })` directly
   - or axios config objects, then call `request(config)` in components/hooks (for example, `getNodeListReq`, `getCardListReq`, `getTaskListReq`)
 
-### Hooks and reuse
+### Hooks and Reuse
 
 Prefer extracting reusable fetch/filter/pagination logic into hooks:
 
 - Common hooks: `packages/web/src/hooks`
 - vGPU business hooks: `packages/web/projects/vgpu/hooks`
 
-## What this guide helps with
+## What This Guide Helps With
 
 - Quickly understand how the project runs (BFF + Vite + API proxy)
 - Clarify where to place code and how to connect routes/menus/i18n/API

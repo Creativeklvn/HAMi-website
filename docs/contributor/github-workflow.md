@@ -7,7 +7,7 @@ This guide covers the end-to-end Git and GitHub workflow for contributing to HAM
 
 ![Git workflow](/img/docs/common/contributor/github-workflow/git-workflow.png)
 
-## Fork and clone
+## Fork and Clone
 
 Fork the target repository on GitHub, then clone your fork locally:
 
@@ -44,7 +44,7 @@ upstream  no_push (push)
 
 The `no_push` setting prevents accidental pushes to the upstream repository.
 
-## Keep master in sync
+## Keep Master in Sync
 
 Before starting any new work, sync your local master with upstream:
 
@@ -56,7 +56,7 @@ git rebase upstream/master
 
 Use `rebase`, not `merge`. Merge commits clutter the history and make it harder to cherry-pick fixes.
 
-## Create a branch
+## Create a Branch
 
 Branch off master with a short, descriptive name:
 
@@ -68,7 +68,7 @@ git checkout -b docs/update-ascend-guide
 
 Work entirely on this branch. Do not commit directly to master.
 
-## Keep your branch in sync
+## Keep Your Branch in Sync
 
 If upstream master has moved while you are working:
 
@@ -111,7 +111,7 @@ git push origin fix/gpu-memory-calculation --force-with-lease
 
 `--force-with-lease` refuses the push if someone else has pushed to the same branch since your last fetch, preventing accidental overwrites.
 
-## Open a pull request
+## Open a Pull Request
 
 1. Go to your fork on GitHub: `https://github.com/<your-username>/HAMi`
 2. Click **Compare & Pull Request** next to your branch.
@@ -121,7 +121,7 @@ git push origin fix/gpu-memory-calculation --force-with-lease
 
 Keep the PR focused on one logical change. See the [contributing guide](contributing.md) for guidance on PR scope.
 
-## Squash commits
+## Squash Commits
 
 Before a PR is merged, clean up the commit history. Squash fixup commits, review-feedback commits, and typo corrections into the logical commit they belong to. Each remaining commit should represent a meaningful unit of work.
 
@@ -156,7 +156,7 @@ Force-push the result:
 git push origin fix/gpu-memory-calculation --force-with-lease
 ```
 
-## Address review feedback
+## Address Review Feedback
 
 Push additional commits to the same branch as you address feedback. Do not close and reopen the PR.
 
@@ -169,7 +169,7 @@ git push origin fix/gpu-memory-calculation
 
 Squash these into the relevant commits before the PR is merged.
 
-## Revert a commit
+## Revert a Commit
 
 To revert a merged commit, create a new branch off master and use `git revert`:
 

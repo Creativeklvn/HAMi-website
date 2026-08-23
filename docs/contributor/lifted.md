@@ -4,14 +4,14 @@ title: How to manage lifted codes
 
 This document explains how lifted code is managed. A common use case for this task is developer lifting code from other repositories to `pkg/util/lifted` directory.
 
-## Steps of lifting code
+## Steps of Lifting Code
 
 - Copy code from another repository and save it to a go file under `pkg/util/lifted`.
 - Optionally change the lifted code.
 - Add lifted comments for the code [as guided](#how-to-write-lifted-comments).
 - Run `hack/update-lifted.sh` to update the lifted doc `pkg/util/lifted/doc.go`.
 
-## How to write lifted comments
+## How to Write Lifted Comments
 
 Lifted comments shall be placed just before the lifted code (could be a func, type, var or const). Only empty lines and comments are allowed between lifted comments and lifted code.
 
@@ -29,7 +29,7 @@ Valid keys are as follow:
 
 ## Examples
 
-### Lifting function
+### Lifting Function
 
 Lift function `IsQuotaHugePageResourceName` to `corehelpers.go`:
 
@@ -51,7 +51,7 @@ Added in `doc.go`:
 | corehelpers.go | https://github.com/kubernetes/kubernetes/blob/release-1.23/pkg/apis/core/helper/helpers.go#L57-L61 | func IsQuotaHugePageResourceName | N |
 ```
 
-### Changed lifting function
+### Changed Lifting Function
 
 Lift and change function `GetNewReplicaSet` to `deployment.go`
 
@@ -78,7 +78,7 @@ Added in `doc.go`:
 | deployment.go | https://github.com/kubernetes/kubernetes/blob/release-1.22/pkg/controller/deployment/util/deployment_util.go#L536-L544 | func GetNewReplicaSet | Y |
 ```
 
-### Lifting const
+### Lifting Const
 
 Lift const `isNegativeErrorMsg` to `corevalidation.go`:
 
@@ -95,7 +95,7 @@ Added in `doc.go`:
 | corevalidation.go | https://github.com/kubernetes/kubernetes/blob/release-1.22/pkg/apis/core/validation/validation.go#L59 | const isNegativeErrorMsg | N |
 ```
 
-### Lifting type
+### Lifting Type
 
 Lift type `Visitor` to `visitpod.go`:
 

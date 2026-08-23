@@ -20,7 +20,7 @@ HAMi now supports dynamic MIG using mig-parted to adjust MIG devices dynamically
 - HAMi > v2.5.0
 - nvidia-container-toolkit
 
-## Enable dynamic MIG support
+## Enable Dynamic MIG Support
 
 - Install the chart using helm, See [enabling vGPU support in kubernetes](https://github.com/Project-HAMi/HAMi#enabling-vgpu-support-in-kubernetes).
 
@@ -49,7 +49,7 @@ HAMi now supports dynamic MIG using mig-parted to adjust MIG devices dynamically
   - hami-scheduler
   - hami-device-plugin on 'MIG-NODE-A'
 
-## Custom MIG configuration (optional)
+## Custom MIG Configuration (Optional)
 
 HAMi currently has a [built-in MIG configuration](https://github.com/Project-HAMi/HAMi/blob/master/charts/hami/templates/scheduler/device-configmap.yaml) for MIG.
 
@@ -131,7 +131,7 @@ HAMi uses the first MIG template that matches the job, in the order defined in t
 
 :::
 
-## Running MIG jobs
+## Running MIG Jobs
 
 A MIG instance can now be requested by a container in the same way as `hami-core`, by specifying the `nvidia.com/gpu` and `nvidia.com/gpumem` resource types.
 

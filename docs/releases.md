@@ -14,17 +14,17 @@ This section provides guidelines on release timelines and release branch mainten
 
 HAMi uses the Semantic Versioning schema. This project follows a given version number MAJOR.MINOR.PATCH.
 
-### MAJOR release
+### MAJOR Release
 
 Major releases contain large features, design and architectural changes, and may include incompatible API changes. Major releases are low frequency and stable over a long period of time.
 
-### MINOR release
+### MINOR Release
 
 Minor releases contain features, enhancements, and fixes that are introduced in a backwards-compatible manner. Since HAMi is a fast growing project and features continue to iterate rapidly, having a minor release approximately every few months helps balance speed and stability.
 
 - Roughly every 3 months
 
-### PATCH release
+### PATCH Release
 
 Patch releases are for backwards-compatible bug fixes and very minor enhancements which do not impact stability or compatibility. Typically only critical fixes are selected for patch releases. Usually there will be at least one patch release in a minor release cycle.
 

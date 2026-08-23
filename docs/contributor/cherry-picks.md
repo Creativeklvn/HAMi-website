@@ -13,7 +13,7 @@ This document explains how cherry picks are managed on release branches in the `
 - [GitHub CLI (`gh`)](https://github.com/cli/cli#installation) installed.
 - A GitHub personal access token with `repo` and `read:org` scopes, used for `gh auth login`.
 
-## What qualifies for a cherry pick
+## What Qualifies for a Cherry-Pick
 
 Release branches receive far fewer merges than master because the bar is higher. Cherry picks are reserved for critical fixes only:
 
@@ -35,7 +35,7 @@ If the fix is not clearly critical, support the case with:
 
 Features that were not enabled on a specific vendor's platform belong in master for the next release. They will not be backported.
 
-## Initiate a cherry pick
+## Initiate a Cherry-Pick
 
 Run the [cherry pick script][cherry-pick-script]. This example backports PR #1206 to `upstream/release-1.0`:
 
@@ -49,7 +49,7 @@ Notes:
 - Run the script separately for each release branch that needs the fix.
 - If `GITHUB_TOKEN` is not set, the script will prompt for a token. Use a [personal access token](https://github.com/settings/tokens) rather than your account password.
 
-## Cherry pick review
+## Cherry-Pick Review
 
 Cherry pick PRs follow the same review process as normal PRs. Code owners review (`/lgtm`) and approve (`/approve`) as they see fit.
 
@@ -61,7 +61,7 @@ Release notes auto-populate from the original master PR.
 
 **CI fails on the cherry pick branch.** Fetch the auto-generated branch, amend the failing commit, and force-push. Alternatively, open a new PR manually - it is noisier but sometimes cleaner.
 
-## Unsupported releases
+## Unsupported Releases
 
 Fixes for end-of-life release branches are not accepted without prior discussion. Open an issue to start that conversation before submitting a cherry pick against an unsupported branch.
 

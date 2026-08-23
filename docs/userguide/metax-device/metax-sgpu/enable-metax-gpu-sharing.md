@@ -17,13 +17,13 @@ translated: true
 - MetaX GPU Operator >= 0.10.2
 - Kubernetes >= 1.23
 
-## Enabling GPU-sharing support
+## Enabling GPU-Sharing Support
 
 - Deploy MetaX GPU Operator on metax nodes (Please consult your device provider to obtain the installation package and documentation)
 
 - Deploy HAMi using the [online installation guide](../../../installation/online-installation.md)
 
-## Running MetaX jobs
+## Running MetaX Jobs
 
 MetaX GPUs can now be requested by a container using the `metax-tech.com/sgpu` resource type:
 

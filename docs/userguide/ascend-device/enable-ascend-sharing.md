@@ -4,11 +4,11 @@ title: Enable Huawei Ascend sharing
 
 The Huawei Ascend device plugin supports NPU-slicing for HAMi. It supports two modes:
 
-## 1. Template-based Hard Slicing (vNPU)
+## 1. Template-Based Hard Slicing (vNPU)
 
 Memory slicing is supported based on virtualization template, the least available template is automatically used. For detailed information, check [device-template](./device-template.md).
 
-## 2. Soft Slicing with Runtime Interception (hami-vnpu-core)
+## 2. Soft Slicing with Runtime Interception (HAMi-vnpu-core)
 
 This mode implements a soft slicing mechanism based on `libvnpu.so` interception and `limiter` token scheduling, enabling fine-grained resource sharing.
 
@@ -40,7 +40,7 @@ npu-smi set -t device-share -i <id> -d <value>
 | `id`      | Device ID. The NPU ID found by running `npu-smi info -l`.          |
 | `value`   | Container enable status: `0` (Disabled, default) or `1` (Enabled). |
 
-## Enabling Huawei Ascend-sharing support
+## Enabling Huawei Ascend-Sharing Support
 
 Due to dependencies with HAMi, you need to set the following arguments when installing HAMi:
 
@@ -160,7 +160,7 @@ spec:
           huawei.com/Ascend310P-memory: "1024"
 ```
 
-### Soft Slicing (hami-vnpu-core)
+### Soft Slicing (HAMi-vnpu-core)
 
 Add the annotation `huawei.com/vnpu-mode: 'hami-core'` to enable soft slicing for a Pod. You can also request a percentage of compute cores using the `-core` resource:
 
@@ -183,7 +183,7 @@ spec:
           huawei.com/Ascend910B3-core: "40" # Request 40% of compute cores
 ```
 
-### Multi-card Parallel Inference (Soft Slicing)
+### Multi-Card Parallel Inference (Soft Slicing)
 
 The soft partitioning mechanism supports requesting multiple virtual devices within the same Pod. When performing multi-card parallel inference (e.g., using vLLM), the value of `--gpu-memory-utilization` must not exceed the ratio of the container's total memory limit to the sum of physical memory of the selected cards.
 

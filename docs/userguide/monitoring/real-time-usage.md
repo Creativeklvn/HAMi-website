@@ -41,7 +41,7 @@ kubectl exec -it <pod-name> -- nvidia-smi
 
 This shows the virtual GPU configuration as seen by the container, including allocated memory and cores.
 
-### Real-time GPU Usage
+### Real-Time GPU Usage
 
 To monitor GPU usage while a workload runs:
 

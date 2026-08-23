@@ -18,7 +18,7 @@ This component supports multiplexing Kunlunxin XPU devices (P800-OAM) and provid
 - xpu-container-toolkit >= xpu_container_1.0.2-1
 - XPU device type: P800-OAM
 
-## Enable XPU-sharing Support
+## Enable XPU-Sharing Support
 
 - Deploy [vxpu-device-plugin]
 

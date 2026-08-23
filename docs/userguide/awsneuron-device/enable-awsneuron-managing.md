@@ -17,7 +17,7 @@ HAMi now integrates with the [Neuron scheduler extension](https://awsdocs-neuron
 - Neuron-device-plugin
 - EC2 instance of type `Inf` or `Trn`
 
-## Enabling Neuron-sharing Support
+## Enabling Neuron-Sharing Support
 
 - Deploy neuron-device-plugin on EC2 neuron nodes according to the AWS document: [Neuron Device Plugin](https://awsdocs-neuron.readthedocs-hosted.com/en/latest/containers/kubernetes-getting-started.html#neuron-device-plugin)
 
@@ -38,7 +38,7 @@ HAMi divides each AWS Neuron device into 2 units for resource allocation. You ca
 - When the number of `aws.amazon.com/neuroncore`>=2, it is equivalent to setting `aws.amazon.com/neuron=1/2 * neuronCoreNumber`
 - The topology awareness scheduling is automatically enabled when tasks require multiple neuron devices.
 
-## Running Neuron jobs
+## Running Neuron Jobs
 
 AWS Neuron devices can now be requested by a container by either using `aws.amazon.com/neuron` or `aws.amazon.com/neuroncore` resource type.
 

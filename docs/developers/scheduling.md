@@ -80,7 +80,7 @@ GPU spread, use different GPU cards when possible, e.g.:
 
 ## Design Details
 
-### Node-scheduler-policy
+### Node-Scheduler-Policy
 
 ![HAMi node scheduler policy diagram, showing Binpack and Spread node selection](/img/docs/common/developers/scheduling/node-scheduler-policy-demo.png)
 
@@ -128,7 +128,7 @@ Node2 score: ((1+2)/4) * 10= 7.5
 
 In `Spread` policy, `Node2` is selected.
 
-### GPU-scheduler-policy
+### GPU-Scheduler-Policy
 
 ![HAMi GPU scheduler policy diagram, comparing Binpack and Spread scores on each card](/img/docs/common/developers/scheduling/gpu-scheduler-policy-demo.png)
 

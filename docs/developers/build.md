@@ -85,7 +85,7 @@ FINISHED                                                                        
 The push refers to repository [docker.io/projecthami/hami]
 ```
 
-## Make HAMi-Core
+## Make HAMi-core
 
 Build HAMi-Core inside a nvidia/cuda image:
 

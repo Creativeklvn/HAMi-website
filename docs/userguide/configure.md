@@ -57,7 +57,7 @@ kubectl -n <namespace> edit cm hami-device-plugin
   - `index`: Indexes of devices to ignore.
   - A device is ignored by HAMi if it is in the `uuid` or `index` list.
 
-## Chart Configs: arguments
+## Chart Configs: Arguments
 
 You can customize your vGPU support by setting the following arguments using `--set`, for example
 

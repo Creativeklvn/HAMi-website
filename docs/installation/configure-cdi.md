@@ -5,7 +5,7 @@ sidebar_label: NVIDIA CDI support
 
 This page explains what CDI does and which Helm chart values enable HAMi's NVIDIA CDI integration.
 
-## What is CDI?
+## What Is CDI?
 
 [CDI (Container Device Interface)](https://github.com/cncf-tags/container-device-interface) is a specification for describing the OCI configuration that a container needs to use a device. A CDI specification can define device nodes, mounts, environment variables, and OCI hooks in JSON or YAML.
 
@@ -21,7 +21,7 @@ When a container runtime receives this name, it finds the matching CDI specifica
 
 CDI does not schedule devices, allocate resources, or enforce quotas. In HAMi's NVIDIA CDI integration, the scheduler and NVIDIA Device Plugin continue to select and allocate GPUs; CDI injects the allocated GPUs and their runtime requirements into containers.
 
-## What problems does CDI solve?
+## What Problems Does CDI Solve?
 
 Injecting a complex device often requires more than mounting a single `/dev` node. A GPU container may also need driver libraries, several device nodes, environment variables, and lifecycle hooks. Without a common interface, vendors must adapt this logic to individual container runtimes, and runtimes may need vendor-specific implementations.
 
@@ -32,7 +32,7 @@ CDI moves these OCI changes into a common specification. It provides:
 - Less dependency on runtime-specific device injection implementations.
 - An inspectable record of the device configuration applied to a container.
 
-## How HAMi uses CDI for NVIDIA GPUs
+## How HAMi Uses CDI for NVIDIA GPUs
 
 With `cdi-annotations` enabled for the NVIDIA Device Plugin, HAMi uses the following injection flow:
 
@@ -58,7 +58,7 @@ Before enabling NVIDIA CDI support in HAMi, confirm that:
 
 For runtime-specific instructions, see the [upstream CDI configuration guide](https://github.com/cncf-tags/container-device-interface#how-to-configure-cdi).
 
-## Configure the Helm chart
+## Configure the Helm Chart
 
 Save the following values as `values-cdi.yaml`:
 
@@ -93,7 +93,7 @@ helm upgrade --install hami hami-charts/hami \
   --values values-cdi.yaml
 ```
 
-## Verify the configuration
+## Verify the Configuration
 
 First, confirm that Helm applied the expected values:
 

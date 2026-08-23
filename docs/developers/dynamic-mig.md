@@ -19,7 +19,7 @@ The NVIDIA GPU built-in sharing method includes: time-slice, MPS and MIG. The co
 - A unified vGPU Pool different virtualization techniques
 - Tasks can choose to use MIG, use HAMi-core, or use both.
 
-### Config maps
+### Config Maps
 
 - hami-scheduler-device-configMap This configmap defines the plugin configurations including resourceName, and MIG geometries, and node-level configurations.
 

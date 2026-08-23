@@ -225,7 +225,7 @@ These are UI captures, not architecture or flow diagrams. They do not require re
 
 ## Known Issues Found During Inventory
 
-### Broken image reference
+### Broken Image Reference
 
 `docs/contributor/contribute-docs.md` (line 153) references:
 
@@ -241,7 +241,7 @@ The directory `static/img/docs/common/architecture/` does not exist. The file at
 
 This is a broken link that will cause a missing image in the rendered page.
 
-### Protocol diagram inconsistency (EN vs. ZH)
+### Protocol Diagram Inconsistency (EN vs. ZH)
 
 The EN `docs/developers/protocol.md` references only `protocol-register.png` (device registration).
 

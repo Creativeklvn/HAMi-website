@@ -5,11 +5,11 @@ sidebar_label: HAMi WebUI
 
 [HAMi WebUI](https://github.com/Project-HAMi/HAMi-WebUI) is the visual interface provided by HAMi for unified monitoring and analysis of GPU resources and workloads. It provides a unified view of cluster GPU usage, node information, and workload status.
 
-## Core capabilities
+## Core Capabilities
 
 HAMi WebUI focuses on GPU resource management and observability, and provides the following core capabilities.
 
-### Cluster overview
+### Cluster Overview
 
 On the cluster overview page, you can quickly understand the overall running status of the current cluster, including:
 
@@ -22,7 +22,7 @@ With unified charts and metrics, users can grasp the global system status on a s
 
 ![HAMi WebUI Overview](/img/docs/en/userguide/webui-overview.png)
 
-### Node management
+### Node Management
 
 HAMi WebUI provides a node-level resource view, including:
 
@@ -33,7 +33,7 @@ You can compare resource usage and workload distribution across different nodes 
 
 ![HAMi WebUI Node List](/img/docs/en/userguide/webui-node-list.png) ![HAMi WebUI Node Details](/img/docs/en/userguide/webui-node-detail.png)
 
-### GPU management
+### GPU Management
 
 From the GPU perspective, HAMi WebUI supports fine-grained inspection of each GPU card:
 

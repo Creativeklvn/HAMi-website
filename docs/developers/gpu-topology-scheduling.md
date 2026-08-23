@@ -20,15 +20,15 @@ helm install hami hami-charts/hami \
 
 If HAMi is already installed, enable it via one of the following methods:
 
-### 1. Device-plugin configuration
+### 1. Device-Plugin Configuration
 
 Set the environment variable `ENABLE_TOPOLOGY_SCORE: 'true'` in the DaemonSet `hami-device-plugin`.
 
-### 2. Global scheduler settings
+### 2. Global Scheduler Settings
 
 Add `--gpu-scheduler-policy=topology-aware` when starting `hami-scheduler`.
 
-### 3. Pod-level annotation
+### 3. Pod-Level Annotation
 
 ```yaml
 metadata:

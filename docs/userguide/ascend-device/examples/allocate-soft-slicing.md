@@ -10,7 +10,7 @@ Soft slicing uses runtime interception (`libvnpu.so`) to enable fine-grained NPU
 
 :::
 
-## Single-card Soft Slicing
+## Single-Card Soft Slicing
 
 Request a portion of an NPU's memory and compute cores:
 
@@ -33,7 +33,7 @@ spec:
           huawei.com/Ascend910B3-core: "40" # Request 40% of compute cores
 ```
 
-## Multi-card Parallel Inference with vLLM (TP=2)
+## Multi-Card Parallel Inference with vLLM (TP=2)
 
 The soft partitioning mechanism supports requesting multiple virtual devices within the same Pod. When performing multi-card parallel inference, `--gpu-memory-utilization` must not exceed the ratio of the container's total memory limit to the sum of physical memory of the selected cards.
 

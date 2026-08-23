@@ -9,7 +9,7 @@ Before installing HAMi, make sure the following tools and dependencies are prope
 - Kubernetes version >= 1.23
 - helm > 3.0
 
-## Preparing your GPU Nodes
+## Preparing Your GPU Nodes
 
 Execute the following steps on all your GPU nodes.
 
@@ -19,7 +19,7 @@ For details see [Installing the NVIDIA Container Toolkit](https://docs.nvidia.co
 
 To inject NVIDIA GPUs through CDI, follow [Enable NVIDIA CDI support for HAMi](./configure-cdi.md) before installing HAMi. Verify the container runtime, driver root, and NVIDIA Container Toolkit path first.
 
-### Example for debian-based systems with Docker and containerd
+### Example for Debian-Based Systems with Docker and containerd
 
 #### Install the `nvidia-container-toolkit`
 
@@ -60,7 +60,7 @@ Then restart containerd:
 sudo systemctl daemon-reload && sudo systemctl restart containerd
 ```
 
-### Label your nodes
+### Label Your Nodes
 
 Label your GPU nodes for scheduling with HAMi by adding the label "gpu=on". Without this label, the nodes cannot be managed by the HAMi scheduler.
 

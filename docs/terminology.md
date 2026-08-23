@@ -34,7 +34,7 @@ slug: /terminology
 | annotation    | annotation / 注解        | 可用中文或保持英文   |
 | label         | label / 标签             | 可用中文或保持英文   |
 
-## HAMi 特有概念 / HAMi-specific
+## HAMi 特有概念 / HAMi-Specific
 
 | English                    | 中文                       | 说明                               |
 | -------------------------- | -------------------------- | ---------------------------------- |

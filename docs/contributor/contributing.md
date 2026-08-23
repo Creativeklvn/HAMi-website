@@ -213,7 +213,7 @@ test: add unit tests for MLU device discovery
 - Body: explain _what_ and _why_, not _how_
 - No period at the end of the subject line
 
-### DCO Sign-off (Required)
+### DCO Sign-Off (Required)
 
 Every commit must include a `Signed-off-by` line. CI blocks PRs that are missing it.
 

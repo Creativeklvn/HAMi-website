@@ -4,7 +4,7 @@ title: Offline Installation
 
 If your cluster can’t directly access the internet, you can install HAMi offline.
 
-## Prepare your images
+## Prepare Your Images
 
 You need to save the following images into a tarball file and copy it into the cluster.
 
@@ -25,7 +25,7 @@ docker tag registry.cn-hangzhou.aliyuncs.com/google_containers/kube-scheduler:{y
 docker push {your_inner_registry}/kube-scheduler:{your kubernetes version}
 ```
 
-## Prepare HAMi chart
+## Prepare HAMi Chart
 
 Download the charts folder from [github](https://github.com/Project-HAMi/HAMi/tree/master/charts), place it into $\{CHART_PATH\} inside cluster, then edit the following fields in $\{CHART_PATH\}/hami/values.yaml.
 
@@ -49,7 +49,7 @@ Run the following command in your $\{CHART_PATH\} folder:
 helm install hami hami --set scheduler.kubeScheduler.image.tag={your k8s server version} -n kube-system
 ```
 
-## Verify your installation
+## Verify Your Installation
 
 Run the following command:
 

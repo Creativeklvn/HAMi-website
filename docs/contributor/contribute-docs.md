@@ -61,7 +61,7 @@ Contributors primarily work in `docs/` (English source) and `i18n/zh/` (Chinese 
 
 ## Adding a New Document
 
-### 1. Create the file
+### 1. Create the File
 
 Place the file in the appropriate subdirectory under `docs/`:
 
@@ -71,7 +71,7 @@ docs/get-started/new-guide.md
 docs/contributor/new-policy.md
 ```
 
-### 2. Add frontmatter
+### 2. Add Frontmatter
 
 Every document must start with frontmatter:
 
@@ -103,7 +103,7 @@ Every new document must be added to `sidebars.js` to appear in navigation. Find 
 
 If you are unsure which category fits, mention it in the PR and a maintainer will help.
 
-### 4. Add a Chinese translation (optional)
+### 4. Add a Chinese Translation (Optional)
 
 Mirror the file path under `i18n/zh/docusaurus-plugin-content-docs/current/`. The structure is identical to `docs/`. Keep the frontmatter the same; translate only the content.
 

@@ -88,7 +88,7 @@ Restart containerd:
 sudo systemctl daemon-reload && sudo systemctl restart containerd
 ```
 
-### 2. Label your nodes {#label-your-nodes}
+### 2. Label Your Nodes {#label-your-nodes}
 
 Label your GPU nodes for HAMi scheduling with `gpu=on`. Nodes without this label cannot be managed by the scheduler.
 
@@ -96,7 +96,7 @@ Label your GPU nodes for HAMi scheduling with `gpu=on`. Nodes without this label
 kubectl label nodes <node-name> gpu=on
 ```
 
-### 3. Deploy HAMi using Helm {#deploy-hami-using-helm}
+### 3. Deploy HAMi Using Helm {#deploy-hami-using-helm}
 
 Check your Kubernetes version:
 
@@ -116,7 +116,7 @@ If successful, both `hami-device-plugin` and `hami-scheduler` pods should be in 
 
 ## Demo {#demo}
 
-### 1. Submit demo task {#submit-demo-task}
+### 1. Submit Demo Task {#submit-demo-task}
 
 Containers can now request NVIDIA vGPUs using the `nvidia.com/gpu` resource type.
 
@@ -142,7 +142,7 @@ Wait for the pod to be ready:
 kubectl wait --for=condition=Ready pod/gpu-pod --timeout=120s
 ```
 
-### 2. Verify container resource limits {#verify-in-container-resource-control}
+### 2. Verify Container Resource Limits {#verify-in-container-resource-control}
 
 Run the following command:
 
@@ -183,7 +183,7 @@ Wed Apr 10 09:28:58 2024
 kubectl delete pod gpu-pod
 ```
 
-## Next steps
+## Next Steps
 
 - [Validate HAMi](./verify-hami) - deeper validation including native GPU stack checks
 - [Configure HAMi](../userguide/configure) - resource limits, scheduling policies, and more

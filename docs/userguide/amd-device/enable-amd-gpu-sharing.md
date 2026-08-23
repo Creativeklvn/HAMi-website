@@ -60,7 +60,7 @@ Confirm the scheduler is running:
 kubectl -n kube-system get pods | grep hami-scheduler
 ```
 
-### Disable the AMD GPU Operator device-plugin
+### Disable the AMD GPU Operator Device-Plugin
 
 If you use the [AMD GPU Operator](https://github.com/ROCm/gpu-operator) for drivers and ROCm, disable its native device-plugin so it does not compete with HAMi `amd-device-plugin` for `amd.com/gpu`:
 
