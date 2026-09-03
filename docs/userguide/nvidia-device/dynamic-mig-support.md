@@ -22,7 +22,7 @@ HAMi now supports dynamic MIG using mig-parted to adjust MIG devices dynamically
 
 ## Enable dynamic MIG support
 
-- Install the chart using `Helm`. See [Online Installation Guide](../../installation/online-installation.md).
+- Install the chart using helm, See [enabling vGPU support in kubernetes](https://github.com/Project-HAMi/HAMi#enabling-vgpu-support-in-kubernetes).
 
 - Configure `mode` in device-plugin configMap to `mig` for MIG nodes
 
@@ -55,7 +55,7 @@ HAMi currently has a [built-in MIG configuration](https://github.com/Project-HAM
 
 You can customize the MIG configuration by following the steps below:
 
-### Edit `device-configmap.yaml` in `charts/hami/templates/scheduler`
+### Edit `device-configmap.yaml` in charts/hami/templates/scheduler
 
 <!-- prettier-ignore -->
 ```yaml
@@ -133,7 +133,7 @@ HAMi uses the first MIG template that matches the job, in the order defined in t
 
 ## Running MIG jobs
 
-A container can request a MIG instance in the same way as `HAMi-Core`, by specifying the `nvidia.com/gpu` and `nvidia.com/gpumem` resource types.
+A MIG instance can now be requested by a container in the same way as `hami-core`, by specifying the `nvidia.com/gpu` and `nvidia.com/gpumem` resource types.
 
 ```yaml
 apiVersion: v1
@@ -141,7 +141,7 @@ kind: Pod
 metadata:
   name: gpu-pod
   annotations:
-    nvidia.com/vgpu-mode: "mig" #(Optional), if not set, this pod can be assigned to a MIG instance or a HAMi-Core instance
+    nvidia.com/vgpu-mode: "mig" #(Optional), if not set, this pod can be assigned to a MIG instance or a hami-core instance
 spec:
   containers:
     - name: ubuntu-container
@@ -153,11 +153,11 @@ spec:
           nvidia.com/gpumem: 8000
 ```
 
-In this example, the job allocates two MIG instances, each with at least 8G device memory.
+In this example above, the job allocates two MIG instances, each with at least 8G device memory.
 
 ## Monitor MIG Instance
 
-MIG instances managed by HAMi will be displayed in the scheduler's metrics endpoint at `<scheduler-node-IP>:31993/metrics`, as follows:
+MIG Instance managed by HAMi will be displayed in scheduler monitor (scheduler node ip:31993/metrics), as follows:
 
 ```bash
 # HELP nodeGPUMigInstance GPU Sharing mode. 0 for hami-core, 1 for mig, 2 for mps
@@ -172,6 +172,6 @@ nodeGPUMigInstance{deviceidx="1",deviceuuid="GPU-30f90f49-43ab-0a78-bf5c-93ed41e
 
 1. No action is required on MIG nodes - everything is managed by `mig-parted` in `hami-device-plugin`.
 2. NVIDIA devices older than the Ampere architecture do not support MIG mode.
-3. MIG resources (for example, `nvidia.com/mig-1g.10gb`) won’t be visible on the node. HAMi uses a unified resource name for both MIG and HAMi-Core nodes.
+3. MIG resources (e.g., `nvidia.com/mig-1g.10gb`) won’t be visible on the node. HAMi uses a unified resource name for both MIG and hami-core nodes.
 
 :::

@@ -5,7 +5,7 @@ title: Online Installation from Helm (Recommended)
 
 The recommended way to deploy HAMi is via Helm.
 
-## Add HAMi Repo
+## Add HAMi repo
 
 You can add HAMi chart repository using the following command:
 
@@ -14,7 +14,7 @@ helm repo add hami-charts https://project-hami.github.io/HAMi/
 helm repo update
 ```
 
-## Check Your Kubernetes Version
+## Check your Kubernetes version
 
 A Kubernetes version is required for a successful installation. You can retrieve your Kubernetes server version with:
 
@@ -32,7 +32,7 @@ helm install hami hami-charts/hami --set scheduler.kubeScheduler.image.tag=v1.29
 
 Customize your installation by editing the [configurations](../userguide/configure.md).
 
-## Verify Your Installation
+## Verify your installation
 
 You can verify your installation using the following command:
 
